@@ -1,0 +1,237 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+/* Stone + Orange 暖色调配色方案 - Light Mode */
+:root {
+  --radius: 0.5rem;
+  
+  /* 背景色 - Stone 系列 */
+  --background: oklch(0.985 0.002 75);        /* Stone 50 */
+  --foreground: oklch(0.216 0.006 56.043);    /* Stone 900 */
+  
+  /* Card */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.216 0.006 56.043);
+  
+  /* Popover */
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.216 0.006 56.043);
+  
+  /* Primary - Orange 强调色 */
+  --primary: oklch(0.646 0.222 41.116);       /* Orange 500 */
+  --primary-foreground: oklch(1 0 0);
+  
+  /* Secondary - Stone */
+  --secondary: oklch(0.97 0.001 75);          /* Stone 100 */
+  --secondary-foreground: oklch(0.216 0.006 56.043);
+  
+  /* Muted */
+  --muted: oklch(0.97 0.001 75);              /* Stone 100 */
+  --muted-foreground: oklch(0.553 0.013 58.071); /* Stone 500 */
+  
+  /* Accent */
+  --accent: oklch(0.97 0.001 75);
+  --accent-foreground: oklch(0.216 0.006 56.043);
+  
+  /* Destructive - Red */
+  --destructive: oklch(0.577 0.245 27.325);
+  
+  /* Border & Input */
+  --border: oklch(0.869 0.005 56.366);        /* Stone 300 */
+  --input: oklch(0.869 0.005 56.366);
+  --ring: oklch(0.646 0.222 41.116);          /* Orange 500 */
+  
+  /* Chart colors */
+  --chart-1: oklch(0.646 0.222 41.116);       /* Orange */
+  --chart-2: oklch(0.6 0.118 184.704);        /* Teal */
+  --chart-3: oklch(0.398 0.07 227.392);       /* Slate */
+  --chart-4: oklch(0.769 0.188 70.08);        /* Amber */
+  --chart-5: oklch(0.627 0.265 303.9);        /* Purple */
+  
+  /* Sidebar - 略深于主背景 */
+  --sidebar: oklch(0.97 0.001 75);            /* Stone 100 */
+  --sidebar-foreground: oklch(0.216 0.006 56.043);
+  --sidebar-primary: oklch(0.646 0.222 41.116);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.923 0.003 48.717); /* Stone 200 */
+  --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
+  --sidebar-border: oklch(0.869 0.005 56.366);
+  --sidebar-ring: oklch(0.646 0.222 41.116);
+}
+
+/* Stone + Orange 暖色调配色方案 - Dark Mode */
+.dark {
+  /* 背景色 - Stone 深色系列 */
+  --background: oklch(0.216 0.006 56.043);    /* Stone 900 */
+  --foreground: oklch(0.985 0.002 75);        /* Stone 50 */
+  
+  /* Card */
+  --card: oklch(0.268 0.007 34.298);          /* Stone 800 */
+  --card-foreground: oklch(0.985 0.002 75);
+  
+  /* Popover */
+  --popover: oklch(0.268 0.007 34.298);
+  --popover-foreground: oklch(0.985 0.002 75);
+  
+  /* Primary - Orange 强调色 (稍亮) */
+  --primary: oklch(0.705 0.213 47.604);       /* Orange 400 */
+  --primary-foreground: oklch(0.216 0.006 56.043);
+  
+  /* Secondary */
+  --secondary: oklch(0.268 0.007 34.298);
+  --secondary-foreground: oklch(0.985 0.002 75);
+  
+  /* Muted */
+  --muted: oklch(0.268 0.007 34.298);
+  --muted-foreground: oklch(0.709 0.01 56.259); /* Stone 400 */
+  
+  /* Accent */
+  --accent: oklch(0.268 0.007 34.298);
+  --accent-foreground: oklch(0.985 0.002 75);
+  
+  /* Destructive */
+  --destructive: oklch(0.704 0.191 22.216);
+  
+  /* Border & Input */
+  --border: oklch(0.444 0.011 73.639);        /* Stone 600 */
+  --input: oklch(0.444 0.011 73.639);
+  --ring: oklch(0.705 0.213 47.604);
+  
+  /* Chart colors (brighter for dark mode) */
+  --chart-1: oklch(0.705 0.213 47.604);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  
+  /* Sidebar - 稍亮于主背景 */
+  --sidebar: oklch(0.268 0.007 34.298);       /* Stone 800 */
+  --sidebar-foreground: oklch(0.985 0.002 75);
+  --sidebar-primary: oklch(0.705 0.213 47.604);
+  --sidebar-primary-foreground: oklch(0.216 0.006 56.043);
+  --sidebar-accent: oklch(0.374 0.01 67.558); /* Stone 700 */
+  --sidebar-accent-foreground: oklch(0.985 0.002 75);
+  --sidebar-border: oklch(0.444 0.011 73.639);
+  --sidebar-ring: oklch(0.705 0.213 47.604);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Prose styles for markdown preview */
+.prose {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-links: var(--primary);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-counters: var(--muted-foreground);
+  --tw-prose-bullets: var(--muted-foreground);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--foreground);
+  --tw-prose-quote-borders: var(--primary);
+  --tw-prose-captions: var(--muted-foreground);
+  --tw-prose-code: var(--foreground);
+  --tw-prose-pre-code: var(--foreground);
+  --tw-prose-pre-bg: var(--muted);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+}
+
+.prose h1 {
+  @apply text-2xl font-bold tracking-tight;
+}
+
+.prose h2 {
+  @apply text-xl font-semibold tracking-tight mt-8 mb-4;
+}
+
+.prose h3 {
+  @apply text-lg font-semibold mt-6 mb-3;
+}
+
+.prose p {
+  @apply leading-7 mb-4;
+}
+
+.prose ul, .prose ol {
+  @apply my-4 ml-6;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose code {
+  @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.prose pre {
+  @apply bg-muted p-4 rounded-lg overflow-x-auto my-4;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary pl-4 italic my-4;
+}
+
+.prose strong {
+  @apply font-semibold;
+}
+
+.prose a {
+  @apply text-primary underline underline-offset-4 hover:text-primary/80;
+}
