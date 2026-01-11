@@ -40,6 +40,9 @@ jobs:
         with:
           targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
+      - name: Install root dependencies
+        run: pnpm install
+
       - name: Install frontend dependencies
         run: pnpm install
         working-directory: frontend
@@ -55,4 +58,3 @@ jobs:
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
-          projectPath: '.'
