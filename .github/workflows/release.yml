@@ -24,6 +24,8 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -38,7 +40,6 @@ jobs:
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
         with:
-          # Those targets are only used on macos runners so it's in an `if` statement to slightly speed up windows
           targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
       - name: Install frontend dependencies
@@ -56,3 +57,4 @@ jobs:
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
+          projectPath: '.'
